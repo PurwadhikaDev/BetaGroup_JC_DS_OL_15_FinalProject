@@ -8,6 +8,9 @@ Mochamad Aditya P. Y. K - JCDSOL-015-011
 Yoga Lafrianto - JCDSOL-015-018
 
 
+# Link Tablue
+- https://public.tableau.com/app/profile/tamara.puspita/viz/HotelCancellationAnalysis_FinalProject/Dashboard1
+
 
 # Background
 
