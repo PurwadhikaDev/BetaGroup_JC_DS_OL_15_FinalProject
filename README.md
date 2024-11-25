@@ -5,7 +5,7 @@ Tamara Puspita Ayu - JCDSOL-015-012
 
 Mochamad Aditya P. Y. K - JCDSOL-015-011
 
-YOGA LAFRIANTO - JCDSOL-015-018
+Yoga Lafrianto - JCDSOL-015-018
 
 
 
