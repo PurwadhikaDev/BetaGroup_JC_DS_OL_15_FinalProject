@@ -47,6 +47,45 @@ Analisis dimulai dengan eksplorasi data untuk memahami distribusi variabel dan k
   5.  Kesimpulan dan Rekomendasi.
 
 
+# Data Understanding
+
+
+|kolom | Penjelasan |
+|---- | ---- |
+| Hotel  | Tipe hotel ( "City Hotel" atau "Resort Hotel")|
+| is_canceled| Status pembatalan pemesanan (0 = tidak dibatalkan, 1 = dibatalkan)|
+| lead_time|Jumlah hari antara waktu pemesanan dan tanggal check-in|
+| arrival_date_year  | Tahun dari tanggal kedatangan |
+| arrival_date_month| Bulan dari tanggal kedatangan|
+| arrival_date_week_number | pada minggu ke berapa tamu akan tiba di hotel|
+| arrival_date_day_of_month| Hari dalam bulan untuk tanggal kedatangan|
+| stays_in_weekend_nights | Jumlah malam menginap pada akhir pekan (Sabtu-Minggu)|
+| stays_in_week_nights | Jumlah malam menginap pada hari kerja (Senin-Jumat)|
+| adults | Jumlah orang dewasa yang terdaftar dalam pemesanan|
+| children| Jumlah anak-anak yang terdaftar dalam pemesanan|
+| babies|Jumlah bayi yang terdaftar dalam pemesanan|
+| meal  | Tipe paket makanan yang dipesan (misalnya: "BB" = Bed & Breakfast, "FB" = Full Board)|
+| country| Kode negara asal pelanggan berdasarkan standar ISO 3166-1 Alpha-3|
+| market_segment |Segmen pasar pemesanan (misalnya: "Direct", "Corporate", "Online TA")|
+| distribution_channel| Saluran distribusi pemesanan (misalnya: "Direct", "Corporate", "TA/TO")|
+| is_repeated_guest | Indikator apakah tamu adalah pelanggan yang menginap berulang (0 = baru, 1 = berulang)|
+| previous_cancellations | Jumlah pembatalan sebelumnya yang dilakukan oleh pelanggan|
+| previous_bookings_not_canceled | Jumlah pemesanan sebelumnya yang tidak dibatalkan oleh pelanggan|
+| reserved_room_type| Tipe kamar yang awalnya dipesan oleh pelanggan|
+| assigned_room_type| Tipe kamar yang sebenarnya diberikan kepada pelanggan|
+| booking_changes  | Jumlah perubahan pemesanan yang dilakukan oleh pelanggan |
+| deposit_type| Jenis deposit yang dilakukan (misalnya: "No Deposit", "Refundable", "Non Refund")|
+| agent |ID agen yang mengatur pemesanan (nilai "NULL" jika tidak ada agen)|
+| company|ID perusahaan yang mengatur pemesanan (nilai "NULL" jika tidak ada perusahaan)|
+| days_in_waiting_list | Jumlah hari pemesanan berada dalam daftar tunggu sebelum dikonfirmasi|
+| customer_type | Tipe pelanggan berdasarkan perilaku pemesanan (misalnya: "Transient", "Contract")|
+| adr | Average Daily Rate (ADR) atau rata-rata pendapatan per kamar per malam yang dipesan|
+| required_car_parking_spaces| Jumlah tempat parkir mobil yang diperlukan oleh pelanggan|
+| total_of_special_requests|Jumlah permintaan khusus yang dibuat oleh pelanggan|
+| reservation_status| Status pemesanan terakhir (misalnya: "Check-Out", "Canceled")|
+| reservation_status_date| Tanggal dari status terakhir pemesanan|
+
+
 # Limitasi
 
 Berdasarkan semua informasi limitasi untuk False Positve, False Negative, True Positive, dan True Negative. Dapat kita simpulkan bahwa:
@@ -226,12 +265,13 @@ Kesimpulan
 
 Rekomendasi ini bertujuan untuk mencapai keseimbangan antara efisiensi operasional, pengalaman tamu, dan profitabilitas. Dengan mengoptimalkan prediksi model, kebijakan yang fleksibel, dan komunikasi yang baik, hotel dapat meminimalkan dampak negatif dari false positive dan false negative secara signifikan.
 
+
 ## 5.2.2 Rekomendasi bagi Manajemen Hotel based on EDA:
 
 Berdasarkan analisis dataset hotel booking demand, terdapat beberapa rekomendasi strategis yang dapat diimplementasikan oleh hotel di Portugal untuk mengurangi pembatalan reservasi dan memaksimalkan pendapatan berdasarkan hasil dari Explanatory Data Analysis:
 
 **Berdasarkan Karkterisitk Waktu**
-- Beberapa hal yang dapat pihak hotel lakukan untuk dapat meminimalisir pembatalan kamar hotel yang telah dilakukan dengan berfokus kepada promosi musiman atau dengan katalain hotel dapat memberikan penawaran diskon ataupun harga menarik sesuai dengan musim ketika customer hadir untuk check-in ataupun bisa memberikan discount untuk musim dimana customer tersebut menginap. Selain itu pihak hotel dapat memberikan beberapa kebijakan dalam melakukan pembatalan seperti customer yang melakukan pembatalan pada h-10 kehadiran tidak akan mendapatkan pengembalian dana, ataupun pihak hotel juga dapat melakukan pengenaan biaya pembatalan yang dilakukan oleh customer atau pinalty agar customer tidak melakukan pembatalan dengan mendadak, sehingga apabila terpaksanya ada pembatalan yang dilakukan, pihak hotel tidak mengalami kerugian yang besar ataupun bisa melakukan strategi untuk memasarkan kembali hotel yang di batalkan tersebut dengan harga spesial agar mendapatkan customer baru.
+- Beberapa hal yang dapat pihak hotel lakukan untuk dapat meminimalisir pembatalan kamar hotel yang telah dilakukan dengan berfokus kepada promosi musiman atau dengan kata lain hotel dapat memberikan penawaran diskon ataupun harga menarik sesuai dengan musim ketika customer hadir untuk check-in ataupun bisa memberikan discount untuk musim dimana customer tersebut menginap. Selain itu pihak hotel dapat memberikan beberapa kebijakan dalam melakukan pembatalan seperti customer yang melakukan pembatalan pada h-10 kehadiran tidak akan mendapatkan pengembalian dana, ataupun pihak hotel juga dapat melakukan pengenaan biaya pembatalan yang dilakukan oleh customer atau pinalty agar customer tidak melakukan pembatalan dengan mendadak, sehingga apabila terpaksanya ada pembatalan yang dilakukan, pihak hotel tidak mengalami kerugian yang besar ataupun bisa melakukan strategi untuk memasarkan kembali hotel yang di batalkan tersebut dengan harga spesial agar mendapatkan customer baru.
 
 **Berdasarkan Karakteristik Tamu**
 - Untuk customer keluarga yang memiliki anak-anak atau bayi, pihak hotel dapat menawarkan fasilitas yang mendukung mereka agar tidak mudah bosan seperti adanya playgrond khusus untuk anak ataupun bayi. Ataupun untuk customer yang membawa orang tua, pihak hotel dapat menyiapkan tremp atau akses lewat khusus utnuk orang tua yang menggunakan kursi roda. Pihak hotel juga dapat memberikan program loyalitas kepada customer, sehingga customer yang sering menginap di hotel dapat merasakan keistimewaan ketika sering menginap di hotel tersebut, ataupun customer yang loyal dapat memberikan testimoninya ke orang sekitar tentang pelayanan yang sangat luarbiasa yang diberikan oleh hotel, sehingga customer yang mendengarkan cerita tersebut berminat untuk mencoba menginap pada hotel tersebut.
