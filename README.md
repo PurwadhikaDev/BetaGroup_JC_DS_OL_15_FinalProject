@@ -14,7 +14,7 @@ Yoga Lafrianto - JCDSOL-015-018
 Antara tahun 2015 hingga 2017, industri perhotelan di Portugal mengalami pertumbuhan yang signifikan, didukung oleh peningkatan jumlah wisatawan internasional dan pengembangan infrastruktur pariwisata. Selama periode ini, Portugal menjadi salah satu tujuan wisata utama di Eropa, dengan kontribusi sektor pariwisata terhadap GDP mencapai sekitar 20% pada 2017. Strategi diversifikasi pasar yang dilakukan pemerintah berhasil mengurangi ketergantungan historis pada pasar Inggris, menarik lebih banyak wisatawan dari negara seperti Spanyol, Prancis, Jerman, dan pasar-pasar baru seperti Kanada dan Brasil [link text](https://horwathhtl.com/publication/market-report-portugal-market-overview/). Data yang berasal dari Kaggle [link text](https://www.kaggle.com/datasets/jessemostipak/hotel-booking-demand/data) dan Science Direct [link text](https://www.sciencedirect.com/science/article/pii/S2352340918315191) ini memberikan wawasan mengenai pola pemesanan, durasi tinggal, dan perilaku pembatalan, yang penting bagi pengelolaan operasional hotel.
 
 Karena hotel memiliki inventaris tetap dan menjual “produk” yang mudah rusak, sebagai cara untuk menyediakan kamar yang tepat bagi tamu yang tepat, pada waktu yang tepat, hotel menerima pemesanan di muka. Pemesanan merupakan kontrak antara pelanggan dan hotel (Talluri & Van Ryzin, 2004). Kontrak ini memberikan pelanggan hak untuk menggunakan layanan di masa mendatang dengan harga yang telah ditetapkan, biasanya dengan opsi untuk membatalkan kontrak sebelum layanan diberikan. Meskipun pemesanan di muka dianggap sebagai prediktor utama kinerja prakiraan hotel (Smith, Parsa, Bujisic, & van der Rest, 2015), opsi untuk membatalkan layanan ini menempatkan risiko pada pihak hotel, karena hotel harus menjamin kamar bagi pelanggan yang memenuhi pemesanan mereka, tetapi pada saat yang sama, harus menanggung biaya peluang dari kapasitas kosong ketika pelanggan membatalkan pemesanan atau tidak muncul (Talluri & Van Ryzin, 2004). Pembatalan terjadi apabila pelanggan mengakhiri kontrak sebelum kedatangannya, sedangkan ketidakhadiran terjadi apabila pelanggan tidak memberi tahu pihak hotel dan gagal check-in. [link text](https://www.researchgate.net/publication/320625331_Predicting_hotel_booking_cancellations_to_decrease_uncertainty_and_increase_revenue)
-
+  
 
 # Problem Statement
 Pembatalan pemesanan hotel telah menjadi tantangan besar dalam industri perhotelan, memengaruhi akurasi prakiraan permintaan, efisiensi operasional, dan pendapatan. Ketidakmampuan untuk mengantisipasi pembatalan berisiko menyebabkan kamar kosong yang tidak terpakai atau, sebaliknya, overbooking, yang dapat merusak reputasi hotel dan memengaruhi pengalaman tamu secara negatif.
@@ -32,10 +32,13 @@ Pembatalan pemesanan hotel telah menjadi tantangan besar dalam industri perhotel
 
 # Goals
 
-Tujuan utama dari proyek ini adalah untuk mengembangkan model Machine Learning yang mampu memprediksi kemungkinan pembatalan pemesanan di hotel dibandingkan dengan metode konvensional (rule based non Machine Learning) yang memperoleh nilai f-1 score sebesar 0.48. Dengan model ini, manajemen hotel dapat lebih proaktif dalam mengantisipasi jumlah pembatalan yang mungkin terjadi, sehingga membantu dalam perencanaan dan pengambilan keputusan operasional yang lebih baik. Dengan prediksi yang akurat, hotel dapat menerapkan strategi mitigasi seperti menetapkan kebijakan deposit yang sesuai, merancang promosi khusus, atau menyesuaikan inventaris kamar.
+- Tujuan utama dari proyek ini adalah untuk mengembangkan model Machine Learning yang mampu memprediksi kemungkinan pembatalan pemesanan di hotel dibandingkan dengan metode konvensional (rule based non Machine Learning) yang memperoleh nilai f-1 score sebesar 0.48. Dengan model ini, manajemen hotel dapat lebih proaktif dalam mengantisipasi jumlah pembatalan yang mungkin terjadi, sehingga membantu dalam perencanaan dan pengambilan keputusan operasional yang lebih baik. Dengan prediksi yang akurat, hotel dapat menerapkan strategi mitigasi seperti menetapkan kebijakan deposit yang sesuai, merancang promosi khusus, atau menyesuaikan inventaris kamar.
 
-  Model ini diharapkan dapat mengidentifikasi variabel atau atribut yang paling memengaruhi keputusan pembatalan pemesanan. Hal ini memungkinkan manajemen untuk memahami faktor-faktor yang memicu pembatalan dan mengambil langkah-langkah pencegahan yang lebih tepat, sehingga dapat meningkatkan tingkat okupansi dan mengoptimalkan pengalaman pelanggan secara keseluruhan.
+- Model ini diharapkan dapat mengidentifikasi variabel atau atribut yang paling memengaruhi keputusan pembatalan pemesanan. Hal ini memungkinkan manajemen untuk memahami faktor-faktor yang memicu pembatalan dan mengambil langkah-langkah pencegahan yang lebih tepat, sehingga dapat meningkatkan tingkat okupansi dan mengoptimalkan pengalaman pelanggan secara keseluruhan.
 
+- Model ini juga difungsikan untuk membantu pihak manajemen hotel untuk menyeimbangkan antara memenuhi kebutuhan tamu yang tidak melakukan pembatalan dan mengatasi risiko dari pelanggan yang melakukan pembatalan
+
+  
 # Analytical Approach
 
 Analisis dimulai dengan eksplorasi data untuk memahami distribusi variabel dan korelasi antara variabel prediktor dengan pembatalan. Berikut tahapan pendekatan analitis yang dapat diambil:
@@ -164,9 +167,9 @@ Berdasarkan semua informasi limitasi untuk False Positve, False Negative, True P
   Berdasarkan analisis, variabel yang paling memengaruhi kemungkinan pembatalan pemesanan adalah:
 
   - Market Segment (Online TA): Pelanggan yang memesan melalui Online Travel Agents (OTA) memiliki kecenderungan lebih tinggi untuk membatalkan reservasi.
-  - Required Car Parking Spaces: Pelanggan yang membutuhkan tempat parkir menunjukkan pola tertentu dalam pembatalan reservasi.
+  - Required Car Parking Spaces: Pelanggan yang tidak membutuhkan tempat parkir paling sering membatalkan dibandingkan dengan yang membutuhkan ruang parkir.
   - Deposit Type (Non-Refundable): Ketentuan deposit yang tidak dapat dikembalikan memengaruhi keputusan pelanggan dalam membatalkan pemesanan.
-  - Is Overseas: Tamu internasional cenderung lebih rentan terhadap pembatalan karena ketidakpastian dalam rencana perjalanan.
+  - Is Overseas: Tamu internasional paling jarang melakukan pembatalan dibandingkan tamu lokal.
 
 **Akurasi Model**:
 
@@ -209,6 +212,10 @@ Berdasarkan semua informasi limitasi untuk False Positve, False Negative, True P
 **Kesimpulan**:
 
 Machine learning terbukti memberikan keunggulan dalam prediksi pembatalan pemesanan, dengan hasil yang lebih akurat dan metrik yang lebih baik dibandingkan metode rule-based. Model XGBoost Classifier yang digunakan mampu menangkap pola-pola penting dalam data, menjadikannya solusi yang efektif untuk analisis pembatalan pemesanan.
+
+F-1 score dipilih karena memberikan keseimbangan antara precision dan recall. Dalam konteks bisnis hotel, baik false positive maupun negative memberikan dampak kerugian, walaupu secara umum false negative lebih banyak menghasilkan kerugian finansial, tetapi false positive dapat mempengaruhi reputasi hotel. Reputasi sendiri merupakan aspek krusial dalam bisnis bidang jasa dan pelayanan.
+
+
 
 ## 5.2.1 Rekomendasi bagi Manajemen Hotel based on Machine Learning Model:
 
@@ -271,22 +278,37 @@ Rekomendasi ini bertujuan untuk mencapai keseimbangan antara efisiensi operasion
 Berdasarkan analisis dataset hotel booking demand, terdapat beberapa rekomendasi strategis yang dapat diimplementasikan oleh hotel di Portugal untuk mengurangi pembatalan reservasi dan memaksimalkan pendapatan berdasarkan hasil dari Explanatory Data Analysis:
 
 **Berdasarkan Karkterisitk Waktu**
-- Beberapa hal yang dapat pihak hotel lakukan untuk dapat meminimalisir pembatalan kamar hotel yang telah dilakukan dengan berfokus kepada promosi musiman atau dengan kata lain hotel dapat memberikan penawaran diskon ataupun harga menarik sesuai dengan musim ketika customer hadir untuk check-in ataupun bisa memberikan discount untuk musim dimana customer tersebut menginap. Selain itu pihak hotel dapat memberikan beberapa kebijakan dalam melakukan pembatalan seperti customer yang melakukan pembatalan pada h-10 kehadiran tidak akan mendapatkan pengembalian dana, ataupun pihak hotel juga dapat melakukan pengenaan biaya pembatalan yang dilakukan oleh customer atau pinalty agar customer tidak melakukan pembatalan dengan mendadak, sehingga apabila terpaksanya ada pembatalan yang dilakukan, pihak hotel tidak mengalami kerugian yang besar ataupun bisa melakukan strategi untuk memasarkan kembali hotel yang di batalkan tersebut dengan harga spesial agar mendapatkan customer baru.
+- Tamu paling sering melakukan pembatalan pada hari kedatangan (_last minute cancellation_). Selain itu, banyak juga yang melakukan pembatalan pada h-1, h-3, h-4, h-6 sebelum kedatangan. 
+
+Rekomendasi: Pihak hotel bisa menyesuaikan kebijakan pembatalannya (_cancelation policy_). Misalnya, dengan mengadopsi kebijakan pembatalan bertahap yang lebih ketat, contohnya:
+
+- -- > Pembatalan lebih dari 7 hari sebelum kedatangan: Tidak ada biaya pembatalan.
+- -- > Pembatalan H-6 sampai H-1: Biaya pembatalan misalnya 50% dari biaya pemesanan.
+- -- > Pembatalan H-0 (Hari Kedatangan): Biaya pemesanan atau deposito tidak dikembalikan atau hanya dikembalikan 20%.
+
+- Hasil analisis waktu juga menunjukkan bahwa keputusan pembatalan lebih dipengaruhi oleh faktor makro (misalnya musim atau bulan kedatangan) dibandingkan mikro (tanggal spesifik). Oleh karena itu, dalam konteks waktu kedatangan, akan lebih relevan jika strategi manajemen pembatalan lebih difokuskan pada pola waktu yang lebih luas daripada tanggal spesifik.
+
+Rekomendasi: siapkan kebijakan pembatalan yang berbeda untuk periode puncak dan non-puncak. Kebijakan pada periode dengan pembatalan paling sering, seperti bulan Juli dan Agustus, harus dibedakan dengan kebijakan pada periode lainnya.
 
 **Berdasarkan Karakteristik Tamu**
-- Untuk customer keluarga yang memiliki anak-anak atau bayi, pihak hotel dapat menawarkan fasilitas yang mendukung mereka agar tidak mudah bosan seperti adanya playgrond khusus untuk anak ataupun bayi. Ataupun untuk customer yang membawa orang tua, pihak hotel dapat menyiapkan tremp atau akses lewat khusus utnuk orang tua yang menggunakan kursi roda. Pihak hotel juga dapat memberikan program loyalitas kepada customer, sehingga customer yang sering menginap di hotel dapat merasakan keistimewaan ketika sering menginap di hotel tersebut, ataupun customer yang loyal dapat memberikan testimoninya ke orang sekitar tentang pelayanan yang sangat luarbiasa yang diberikan oleh hotel, sehingga customer yang mendengarkan cerita tersebut berminat untuk mencoba menginap pada hotel tersebut.
+- Untuk customer keluarga yang memiliki anak-anak atau bayi, pihak hotel dapat menawarkan fasilitas yang mendukung mereka agar tidak mudah bosan seperti adanya playgrond khusus untuk anak ataupun bayi. Ataupun untuk customer yang membawa orang tua, pihak hotel dapat menyiapkan tremp atau akses lewat khusus untuk orang tua yang menggunakan kursi roda. Pihak hotel juga dapat memberikan program loyalitas kepada customer, sehingga customer yang sering menginap di hotel dapat merasakan keistimewaan ketika sering menginap di hotel tersebut, ataupun customer yang loyal dapat memberikan testimoninya ke orang sekitar tentang pelayanan yang sangat luarbiasa yang diberikan oleh hotel, sehingga customer yang mendengarkan cerita tersebut berminat untuk mencoba menginap pada hotel tersebut.
 
 **Berdasarkan Karakteristik Pemesanan**
 - Hotel dapat memberikan diskon untuk para customer yang melakukan pemesanan langsung pada situs hotel dan memberikan kewajiban deposito ataupun kebijakan untuk tidak bisa melakukan pengembalian dana apabila memesan menggunakan agen. Selanjutnya untuk pelanggan tipe Contract, hotel dapat meberikan penawaran khusus dan opsi komitmen lebih awal, sementara untuk pelanggan Transient, berikan pengalaman yang lebih personal agar mereka merasa lebih dihargai atau diperhatikan. Dan untuk mengantisipasi adanya peningkatan pengunjung, pihak hotel dapat memastikan bahwa lahan parkir yang dimiliki cukup untuk menampung kendaraan yang dibawa oleh customer. Kemudian untuk  hotel berjenis resort hotel dapat menawarkan paket bundling all-inclusive untuk meningkatkan pengalaman tamu.  Kemudian pihak hotel dapat melakukan promosi pada sosial media dengan menggunakan multi-language sebab banyaknya customer yang berasal dari luar negeri.
 
 **Berdasarkan Analisa Keuangan**
+- ADR atau tarif harian kamar rata-rata untuk pesanan yang dibatalkan sedikit lebih tinggi daripada yang tidak dibatalkan, terutama pada beberapa periode tertentu. Misalnya, saat ADR >80 euro pada minggu ke-50 tahun 2015, reservasi lebih sering dibatalkan dibandingkan saat ADR-nya < 60 euro.
+
+- Pada high season (musim puncak), ADR tidak begitu mempengaruhi tingkat pembatalan.
+
+Rekomendasi: Pada periode non-high season, diskon atau layanan premium seperti late check-out atau makan malam gratis dapat diberikan untuk menarik lebih banyak tamu pada periode-periode tersebut.
+
 - Pendapatan hotel dari reservasi yang tidak dibatalkan mencapai €22,930,425.50, sementara potensi pendapatan dari reservasi yang dibatalkan adalah €11,456,861.02. Jika tidak ada reservasi yang dibatalkan sama sekali, maka total pendapatan hotel yang dapat diperoleh adalah €34,387,286.52. Dengan demikian, pembatalan reservasi menyumbang kerugian potensial sebesar 33.32% dari total pendapatan yang mungkin diraih jika tidak ada pembatalan. Untuk meminimalkan kerugian ini, hotel dapat menerapkan strategi kebijakan non-refundable atau mengenakan penalti pada pembatalan yang dilakukan dalam periode tertentu sebelum tanggal check-in. Selain itu, dengan meningkatkan promosi untuk menarik tamu last-minute, hotel dapat memanfaatkan kembali kamar yang kosong akibat pembatalan. Strategi ini tidak hanya mengurangi dampak finansial dari pembatalan, tetapi juga membantu menjaga tingkat okupansi kamar, yang pada akhirnya berkontribusi pada stabilitas pendapatan hotel.
 
 
+
+
 Sebagai salah satu destinasi wisata utama, hotel di Portugal dapat memanfaatkan strategi berbasis data untuk meningkatkan daya saing. Dengan memberikan layanan responsif, promosi relevan, dan fasilitas yang baik, hotel dapat menciptakan pengalaman tamu yang optimal, mengurangi tingkat pembatalan, dan memaksimalkan pendapatan. Strategi ini juga membantu menjaga reputasi dan menarik lebih banyak tamu di masa mendatang.
-
-
-
 
 
 
