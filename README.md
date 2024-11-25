@@ -1,3 +1,14 @@
+# Kelompok Beta
+Anggota Kelompok:
+
+Tamara Puspita Ayu - JCDSOL-015-012
+
+Mochamad Aditya P. Y. K - JCDSOL-015-011
+
+YOGA LAFRIANTO - JCDSOL-015-018
+
+
+
 # Background
 
 Antara tahun 2015 hingga 2017, industri perhotelan di Portugal mengalami pertumbuhan yang signifikan, didukung oleh peningkatan jumlah wisatawan internasional dan pengembangan infrastruktur pariwisata. Selama periode ini, Portugal menjadi salah satu tujuan wisata utama di Eropa, dengan kontribusi sektor pariwisata terhadap GDP mencapai sekitar 20% pada 2017. Strategi diversifikasi pasar yang dilakukan pemerintah berhasil mengurangi ketergantungan historis pada pasar Inggris, menarik lebih banyak wisatawan dari negara seperti Spanyol, Prancis, Jerman, dan pasar-pasar baru seperti Kanada dan Brasil [link text](https://horwathhtl.com/publication/market-report-portugal-market-overview/). Data yang berasal dari Kaggle [link text](https://www.kaggle.com/datasets/jessemostipak/hotel-booking-demand/data) dan Science Direct [link text](https://www.sciencedirect.com/science/article/pii/S2352340918315191) ini memberikan wawasan mengenai pola pemesanan, durasi tinggal, dan perilaku pembatalan, yang penting bagi pengelolaan operasional hotel.
